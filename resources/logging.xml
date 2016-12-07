@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<logging_configuration>
+	<log_handlers>
+        <log_handler name="sdk_file_handler" class="oracle.core.ojdl.logging.ODLHandlerFactory">
+            <property name="path" value="${logging.folder}/SDK/sdk.log"></property>
+            <property name="maxFileSize" value="10000000"></property>
+            <property name="deleteFiles" value="false"></property>
+            <property name="useSourceClassAndMethod" value="true"/>
+        </log_handler>
+        <log_handler name="sdk_console_handler" class="com.sqribe.rm.ConsoleHandler">
+        </log_handler>
+	</log_handlers>
+	<loggers>
+		<logger name="oracle.EPMSDK.com.sqribe.rm" level="NOTIFICATION:16" useParentHandlers="false">
+            <handler name="sdk_file_handler"></handler>
+            <!--<handler name="sdk_console_handler"></handler>-->
+        </logger>
+	</loggers>
+</logging_configuration>
